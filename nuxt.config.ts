@@ -2,15 +2,18 @@
 import { resolve } from "path";
 
 export default defineNuxtConfig({
+  buildDir: "dist",
+  target: "static",
+  generate: {
+    fallback: true,
+  },
   ssr: true,
   app: {
     head: {
       charset: "utf-8",
       viewport: "width=device-width,initial-scale=1",
       title: "M&B Mobilesauna - Verkauf von hochwertigen mobilen Saunen",
-      link: [
-        { rel: "icon", type: "image/svg", href: "/favicon.svg" },
-      ],
+      link: [{ rel: "icon", type: "image/svg", href: "/favicon.svg" }],
       titleTemplate: "M&B Mobilesauna - Sauna ganz nah bei dir",
       meta: [
         { charset: "utf-8" },
@@ -83,7 +86,6 @@ export default defineNuxtConfig({
     "nuxt-simple-robots",
     "nuxt-simple-sitemap",
     "nuxt-gtag",
-
   ],
   extends: ["nuxt-seo-kit"],
   css: ["assets/index.css"],
